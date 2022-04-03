@@ -5,6 +5,10 @@
   "config": {
     "exedir": "3-Decorator_Pattern"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cwjacobs/Design-Patterens.git"
+  },
   "scripts": {
     "build": "tsc",
     "main": "npm run build && node ./dist/%npm_package_config_exedir%/src/main.js",
