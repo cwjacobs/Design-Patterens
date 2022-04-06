@@ -1,5 +1,5 @@
-import { IBeverage } from "../iBeverage";
-import { Coffee } from "../coffee";
+import { IBeverage } from "../src/iBeverage";
+import { Coffee } from "../src/coffee";
 
 describe("Ordering Coffee", () => {
 	describe("Given a black coffee", () => {

@@ -1,4 +1,4 @@
-import { ReverseSort } from "../reverseSort";
+import { ReverseSort } from "../src/reverseSort";
 
 describe("Reverse Sort", () => {
 	describe("Given an array", () => {

@@ -1,7 +1,7 @@
-import { IBeverage } from "../iBeverage";
-import { IAddOnDecorator } from "../iAddOnDecorator";
-import { Coffee } from "../coffee";
-import { Cream } from "../cream";
+import { IBeverage } from "../src/iBeverage";
+import { IAddOnDecorator } from "../src/iAddOnDecorator";
+import { Coffee } from "../src/coffee";
+import { Cream } from "../src/cream";
 
 describe("Adding Cream", () => {
 	describe("Given a beverage", () => {

@@ -1,4 +1,4 @@
-import { DefaultSort } from "../defaultSort";
+import { DefaultSort } from "../src/defaultSort";
 
 test("sort an array of numbers using 'default' sort (smallest to largest)", () => {
 	var defaultSort = new DefaultSort();

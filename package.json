@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "config": {
-    "exedir": "3-Decorator_Pattern"
+    "exedir": "17-State_Pattern"
   },
   "repository": {
     "type": "git",

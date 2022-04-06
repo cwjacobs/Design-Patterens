@@ -1,0 +1,7 @@
+export enum State {
+	INIT = "INIT",
+	LOCKED = "LOCKED",
+	UNLOCKED = "UNLOCKED",
+	PROCESSINGSTATE = "PROCESSINGSTATE"
+};
+

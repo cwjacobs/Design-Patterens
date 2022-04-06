@@ -1,7 +1,7 @@
-import { Cinnamon } from "../cinnamon";
-import { IBeverage } from "../iBeverage";
-import { IAddOnDecorator } from "../iAddOnDecorator";
-import { Coffee } from "../coffee";
+import { Cinnamon } from "../src/cinnamon";
+import { IBeverage } from "../src/iBeverage";
+import { IAddOnDecorator } from "../src/iAddOnDecorator";
+import { Coffee } from "../src/coffee";
 
 describe("Adding Cinnamon", () => {
 	describe("Given a beverage", () => {

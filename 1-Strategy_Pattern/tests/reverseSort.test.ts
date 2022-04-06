@@ -1,4 +1,4 @@
-import { ReverseSort } from "../reverseSort";
+import { ReverseSort } from "../src/reverseSort";
 
 test("sort an array of numbers using 'reverse' sort (largest to smallest)", () => {
 	var defaultSort = new ReverseSort();
