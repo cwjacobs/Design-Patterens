@@ -1,8 +1,9 @@
+import { IPayToEnter } from "./iPayToEnter";
 import { State } from "./types";
 
 export interface IState {
-	enter(): State;
-	pay(): State;
-	payOk(): State;
-	payFailed(): State;
+	onEnter(): State;
+	onPay(): State;
+	onPayOk(): State;
+	onPayFailed(): State;
 }

@@ -6,15 +6,15 @@ import { Turnstile } from "./turnstile";
 
 const main = (): State => {
 	let state: State = State.INIT;
-	let turnstile: IPayToEnter = new Turnstile(new LockedState());
+	let turnstile: IPayToEnter = new Turnstile();
 
-	state = turnstile.enter();
+	state = turnstile.onPay();
 
-	state = turnstile.pay();
+	state = turnstile.onPayOk();
 
-	state = turnstile.payOk();
+	state = turnstile.onEnter();
 
-	state = turnstile.payFailed();
+	state = turnstile.onPayFailed();
 
 	return state;
 }

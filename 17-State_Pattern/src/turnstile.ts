@@ -6,23 +6,27 @@ import { LockedState } from "./lockedState";
 export class Turnstile implements IPayToEnter {
 	private state: IState;
 
-	constructor(state: IState) {
+	constructor() {
+		this.state = new LockedState(this);
+	}
+
+	public onEnter(): State {
+		return this.state.onEnter();
+	}
+
+	public onPay(): State {
+		return this.state.onPay();
+	}
+
+	public onPayOk(): State {
+		return this.state.onPayOk();
+	}
+
+	public onPayFailed(): State {
+		return this.state.onPayFailed();
+	}
+
+	public changeState(state: IState): void {
 		this.state = state;
-	}
-
-	public enter(): State {
-		return this.state.enter();
-	}
-
-	public pay(): State {
-		return this.state.pay();
-	}
-
-	public payOk(): State {
-		return this.state.payOk();
-	}
-
-	public payFailed(): State {
-		return this.state.payFailed();
 	}
 }
