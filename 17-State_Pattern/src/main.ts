@@ -8,14 +8,34 @@ const main = (): State => {
 	let state: State = State.INIT;
 	let turnstile: IPayToEnter = new Turnstile();
 
-	state = turnstile.onPay();
+	let deviceEvents = [
+		["onEnter", "onPayOk", "onPay"],
+		["onEnter", "onPay", "onPayOk", "onPayFailed"],
+		["onPay", "onPayOk", "onPayFailed", "onEnter"],
+		["onPayFailed", "onPay", "onPayOk", "onEnter"],
+		["onEnter", "onPay", "onPayOk", "onPayFailed", "onEnter", "onPay", "onPayOk"],
+	];
 
-	state = turnstile.onPayOk();
-
-	state = turnstile.onEnter();
-
-	state = turnstile.onPayFailed();
-
+	deviceEvents.forEach((events) => {
+		console.log(`******************  `);
+		console.log(`Begin Event Series\n`);
+		events.forEach((event) => {
+			switch (event) {
+				case "onEnter":
+					state = turnstile.onEnter();
+					break;
+				case "onPay":
+					state = turnstile.onPay();
+					break;
+				case "onPayOk":
+					state = turnstile.onPayOk();
+					break;
+				case "onPayFailed":
+					state = turnstile.onPayFailed();
+					break;
+			}
+		});
+	});
 	return state;
 }
 

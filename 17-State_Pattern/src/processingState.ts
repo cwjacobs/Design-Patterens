@@ -13,26 +13,26 @@ export class ProcessingState implements IState {
 
 	public onEnter(): State {
 		console.log(`onEnter --> ProcessingState --> ignore`);
-		console.log(`state == ProcessingState`);
+		console.log(`state == ProcessingState\n`);
 		return State.PROCESSINGSTATE;
 	}
 
 	public onPay(): State {
 		console.log(`onPay --> ProcessingState --> ignore`);
-		console.log(`state == ProcessingState`);
+		console.log(`state == ProcessingState\n`);
 		return State.PROCESSINGSTATE;
 	}
 
 	public onPayOk(): State {
 		console.log(`onPayOk --> ProcessingState --> UnLockedState`);
-		console.log(`state == UnLockedState`);
+		console.log(`state == UnLockedState\n`);
 		this.device.changeState(new UnLockedState(this.device));
 		return State.UNLOCKED;
 	}
 
 	public onPayFailed(): State {
 		console.log(`onPayFailed --> ProcessingState --> LockedState`);
-		console.log(`state == LockedState`);
+		console.log(`state == LockedState\n`);
 		this.device.changeState(new LockedState(this.device));
 		return State.LOCKED;
 	}

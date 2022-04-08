@@ -12,27 +12,26 @@ export class LockedState implements IState {
 
 	public onEnter(): State {
 		console.log(`onEnter --> LockedState --> ignore`);
-		console.log(`state == LockedState`);
+		console.log(`state == LockedState\n`);
 		return State.LOCKED;
 	}
 
 	public onPay(): State {
 		console.log(`onPay --> LockedState --> ProcessingState`);
-		console.log(`state == ProcessingState`);
+		console.log(`state == ProcessingState\n`);
 		this.device.changeState(new ProcessingState(this.device));
 		return State.PROCESSINGSTATE;
 	}
 
 	public onPayOk(): State {
-		console.log(`onPayOk --> LockedState --> UnLockedState`);
-		console.log(`state == UnLockedState`);
-		this.device.changeState(new UnLockedState(this.device));
-		return State.UNLOCKED;
+		console.log(`onPayOk --> LockedState --> ignore`);
+		console.log(`state == LockedState\n`);
+		return State.LOCKED;
 	}
 
 	public onPayFailed(): State {
 		console.log(`onPayFailed --> LockedState --> ignore`);
-		console.log(`state == LockedState`);
+		console.log(`state == LockedState\n`);
 		return State.LOCKED;
 	}
 }
